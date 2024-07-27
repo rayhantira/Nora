@@ -14,266 +14,245 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <script src="main.js"></script>
-    <script>
-      const prevBtn = document.getElementById('prev-btn');
-      const nextBtn = document.getElementById('next-btn');
-      const slider = document.querySelector('.slider');
-  
-      const cardWidth = document.querySelector('.card-testi').offsetWidth + 30; // 30px adalah gap antar card
-  
-      prevBtn.addEventListener('click', () => {
-          slider.scrollBy({
-              left: -cardWidth,
-              behavior: 'smooth'
-          });
-      });
-  
-      nextBtn.addEventListener('click', () => {
-          slider.scrollBy({
-              left: cardWidth,
-              behavior: 'smooth'
-          });
-      });
-  </script>
+    
   </head>
   <body class="bg-[#FFFEF9] font-poppins">
     <div class="content overflow-x-hidden scroll-smooth">
 
       <section id="Header" class="flex flex-col gap-[50px] relative">
-          <nav class="container mx-auto flex justify-between items-center pt-[30px] z-30 px-1 md:px-0">
-              <a href="index.html" class="flex w-fit">
-                  <img src="/assets/images/logos/logo.svg" alt="logo"
-                      class="w-[80px] sm:w-[120px] md:w-[140px] lg:w-36 " />
-              </a>
-              <div class="hidden lg:flex items-center">
-                  <ul class="flex gap-[45px] items-center text-white">
-                      <li>
-                          <a href="index.html"
-                              class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">Home</a>
-                      </li>
-                      <li>
-                          <a href="#About"
-                              class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">About</a>
-                      </li>
-                      <li>
-                          <a href="#Services"
-                              class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">Services</a>
-                      </li>
-                      <li>
-                          <a href="#Testimonials"
-                              class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">Testimonials</a>
-                      </li>
-                      <li>
-                          <a href="#"
-                              class="text-white bg-black font-semibold text-base p-[14px_30px] rounded-full transition-all duration-300  hover:text-black hover:bg-transparent border-black border">Let's
-                              Talk</a>
-                      </li>
-                  </ul>
-              </div>
-              <div class="lg:hidden flex items-center px-2">
-                  <button id="menu-btn" class="text-black z-50 relative">
-                      <!-- Hamburger Icon -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                          stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M4 6h16M4 12h16M4 18h16" />
-                      </svg>
-                  </button>
-              </div>
+        <nav class="container mx-auto flex justify-between items-center pt-[30px] z-30 px-1 md:px-0">
+            <a href="index.html" class="flex w-fit">
+                <img src="/assets/images/logos/logo.svg" alt="logo"
+                    class="w-[80px] sm:w-[120px] md:w-[140px] lg:w-36 " />
+            </a>
+            <div class="hidden lg:flex items-center">
+                <ul class="flex gap-[45px] items-center text-white">
+                    <li>
+                        <a href="index.html"
+                            class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">Home</a>
+                    </li>
+                    <li>
+                        <a href="#About"
+                            class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">About</a>
+                    </li>
+                    <li>
+                        <a href="#Services"
+                            class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">Services</a>
+                    </li>
+                    <li>
+                        <a href="#Testimonials"
+                            class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">Testimonials</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="text-white bg-black font-semibold text-base p-[14px_30px] rounded-full transition-all duration-300  hover:text-black hover:bg-transparent border-black border">Let's
+                            Talk</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="lg:hidden flex items-center px-2">
+                <button id="menu-btn" class="text-black z-50 relative">
+                    <!-- Hamburger Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
 
-              <!-- Mobile Menu -->
-              <div id="mobile-menu"
-                  class="hidden fixed flex flex-col gap-[50px] items-center text-black top-0 left-0 w-full h-full z-40 justify-center bg-[#faf7ec]">
-                  <ul class="flex flex-col gap-[35px] items-center text-black opacity-100">
-                      <li>
-                          <a href="{{ route('front.index"
-                              class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">Home</a>
-                      </li>
-                      <li>
-                          <a href="#About"
-                              class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">About</a>
-                      </li>
-                      <li>
-                          <a href="#Services"
-                              class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">Services</a>
-                      </li>
-                      <li>
-                          <a href="#Testimonials"
-                              class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">Testimonials</a>
-                      </li>
-                      <li>
-                          <a href="#"
-                              class="mt-5 text-white bg-black font-medium text-[18px] px-[30px] py-[12px] rounded-full transition-all duration-300 hover:bg-transparent hover:text-black border-black border">Let's
-                              Talk</a>
-                      </li>
-                  </ul>
-              </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="hidden fixed flex flex-col gap-[50px] items-center text-black top-0 left-0 w-full h-full z-40 justify-center bg-[#faf7ec]">
+                <ul class="flex flex-col gap-[35px] items-center text-black opacity-100">
+                    <li>
+                        <a href="{{ route('front.index"
+                            class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">Home</a>
+                    </li>
+                    <li>
+                        <a href="#About"
+                            class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">About</a>
+                    </li>
+                    <li>
+                        <a href="#Services"
+                            class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">Services</a>
+                    </li>
+                    <li>
+                        <a href="#Testimonials"
+                            class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">Testimonials</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="mt-5 text-white bg-black font-medium text-[18px] px-[30px] py-[12px] rounded-full transition-all duration-300 hover:bg-transparent hover:text-black border-black border">Let's
+                            Talk</a>
+                    </li>
+                </ul>
+            </div>
 
-          </nav>
+        </nav>
 
-          <div
-              class="hero container mx-auto flex flex-col md:flex-row justify-between items-center  md:pb-[60px] px-1 ">
-              <div class="flex flex-col gap-[18px] sm:gap-[20px] md:gap-[30px] h-fit container text-white z-20">
-                  <p
-                      class="text-center tracking-wide text-[10px] md:text-[12px] lg:text-left font-semibold  lg:text-[14px] text-black bg-yellow py-[3px] px-[18px] md:lg:py-1 md:px-5 rounded-full w-fit mx-auto md:mx-0">
-                      WE CAN HELP YOU
-                  </p>
-                  <h1
-                      class="text-center md:text-left font-semibold md:font-medium tracking-tight lg:tracking-tightest text-[50px] sm:text-[56px] md:text-[65px] lg:text-[80px] xl:text-[100px] leading-[60px] sm:leading-[70px] lg:leading-[86px] xl:leading-[100px] text-black">
-                      Weaving Your
-                      <span class="font-monarque font-semibold italic pr-3 gradient-text">Brand</span>
-                      Soul
-                  </h1>
-                  <p
-                      class="text-center md:text-left text-[12px] sm:text-[12px] md:text-[14px] lg:text-[16px] text-[#797978] font-normal mx-auto md:mx-0 md:w-[450px]">
-                      We
-                      seamlessly blend your brand's essence
-                      into every pixel, crafting digital experiences that resonate with your unique identity.</p>
-                  <div class="flex mx-auto md:mx-0 mb-12 md:mb-0">
-                      <button
-                          class="flex items-center justify-center font-semibold text-[12px] sm:text-[14px] md:text-[16px] rounded-full p-[12px_20px] lg:p-[12px_30px] bg-black w-fit transition-all duration-300 hover:bg-transparent border hover:border-black hover:bg-white hover:text-black group">
-                          GET STARTED
-                          <img src="/assets/images/icons/button arrow.png"
-                              class="w-[30px] lg:w-[40px] h-auto ml-2 transition-all duration-300 group-hover:hidden"
-                              alt="">
-                          <img src="/assets/images/icons/arrow-right-hover.png"
-                              class="w-[30px] lg:w-[40px] h-auto ml-2 transition-all duration-300 hidden group-hover:block"
-                              alt="">
-                      </button>
-                      <button
-                          class="font-semibold  text-black text-[12px] sm:text-[14px] md:text-[16px] rounded-full p-[12px_20px] md:p-[12px_30px]  w-fit transition-all duration-300 hover:bg-yellow ">
-                          LEARN MORE
-                      </button>
-                  </div>
-              </div>
-              <div class="lg:flex flex-col w-[300px] md:w-[520px] lg:w-[600px] z-20">
-                  <img src="/assets/images/hero-image.png" class="w-full h-full object-contain" alt="hero image" />
-              </div>
-              <img src="/assets/images/Ellipse.svg"
-                  class="absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 z-0"
-                  alt="background icon" />
-          </div>
+        <div
+            class="hero container mx-auto flex flex-col md:flex-row justify-between items-center  md:pb-[60px] px-1 ">
+            <div class="flex flex-col gap-[18px] sm:gap-[20px] md:gap-[30px] h-fit container text-white z-20">
+                <p
+                    class="text-center tracking-wide text-[10px] md:text-[12px] lg:text-left font-semibold  lg:text-[14px] text-black bg-yellow py-[3px] px-[18px] md:lg:py-1 md:px-5 rounded-full w-fit mx-auto md:mx-0">
+                    WE CAN HELP YOU
+                </p>
+                <h1
+                    class="text-center md:text-left font-semibold md:font-medium tracking-tight lg:tracking-tightest text-[50px] sm:text-[56px] md:text-[65px] lg:text-[80px] xl:text-[100px] leading-[60px] sm:leading-[70px] lg:leading-[86px] xl:leading-[100px] text-black">
+                    Weaving Your
+                    <span class="font-monarque font-semibold italic pr-3 gradient-text">Brand</span>
+                    Soul
+                </h1>
+                <p
+                    class="text-center md:text-left text-[12px] sm:text-[12px] md:text-[14px] lg:text-[16px] text-[#797978] font-normal mx-auto md:mx-0 md:w-[450px]">
+                    We
+                    seamlessly blend your brand's essence
+                    into every pixel, crafting digital experiences that resonate with your unique identity.</p>
+                <div class="flex mx-auto md:mx-0 mb-12 md:mb-0">
+                    <button
+                        class="flex items-center justify-center font-semibold text-[12px] sm:text-[14px] md:text-[16px] rounded-full p-[12px_20px] lg:p-[12px_30px] bg-black w-fit transition-all duration-300 hover:bg-transparent border hover:border-black hover:bg-white hover:text-black group">
+                        GET STARTED
+                        <img src="/assets/images/icons/button arrow.png"
+                            class="w-[30px] lg:w-[40px] h-auto ml-2 transition-all duration-300 group-hover:hidden"
+                            alt="">
+                        <img src="/assets/images/icons/arrow-right-hover.png"
+                            class="w-[30px] lg:w-[40px] h-auto ml-2 transition-all duration-300 hidden group-hover:block"
+                            alt="">
+                    </button>
+                    <button
+                        class="font-semibold  text-black text-[12px] sm:text-[14px] md:text-[16px] rounded-full p-[12px_20px] md:p-[12px_30px]  w-fit transition-all duration-300 hover:bg-yellow ">
+                        LEARN MORE
+                    </button>
+                </div>
+            </div>
+            <div class="lg:flex flex-col w-[300px] md:w-[520px] lg:w-[600px] z-20">
+                <img src="/assets/images/hero-image.png" class="w-full h-full object-contain" alt="hero image" />
+            </div>
+            <img src="/assets/images/Ellipse.svg"
+                class="absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 z-0"
+                alt="background icon" />
+        </div>
 
-          <div class="company-logos w-full overflow-hidden pb-[100px] sm:pb-[120px] md:pb-[140px] lg:pb-[180px] z-19 ">
-              <div class="group/slider flex flex-nowrap w-max items-center">
-                  <div
-                      class="logo-container animate-[slide_25s_linear_infinite] group-hover/slider:pause-animate  flex  gap-[40px] md:gap-[70px] pl-[70px] items-center flex-nowrap">
-                      <div class="flex w-[100px] md:w-[140px]  h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                  </div>
-                  <div
-                      class="logo-container animate-[slide_25s_linear_infinite] group-hover/slider:pause-animate  flex gap-[70px] pl-[70px] items-center flex-nowrap ">
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
-                          <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
-                              alt="logo">
-                      </div>
-                  </div>
-              </div>
-          </div>
+        <div class="company-logos w-full overflow-hidden pb-[100px] sm:pb-[120px] md:pb-[140px] lg:pb-[180px] z-19 ">
+            <div class="group/slider flex flex-nowrap w-max items-center">
+                <div
+                    class="logo-container animate-[slide_25s_linear_infinite] group-hover/slider:pause-animate  flex  gap-[40px] md:gap-[70px] pl-[70px] items-center flex-nowrap">
+                    <div class="flex w-[100px] md:w-[140px]  h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                </div>
+                <div
+                    class="logo-container animate-[slide_25s_linear_infinite] group-hover/slider:pause-animate  flex gap-[70px] pl-[70px] items-center flex-nowrap ">
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                    <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                        <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
+                            alt="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-          <div
-              class="stats container w-[90%]  mx-auto bg-card-gradient flex flex-wrap justify-between items-center px-[20px] lg:px-[100px] md:px-[70px] rounded-[30px] h-auto md:h-[120px] lg:h-[140px] absolute transform -translate-x-1/2 translate-y-1/2 bottom-0 left-1/2">
-              <div class="text-center w-fit h-fit my-0">
-                  <p
-                      class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
-                      13
-                  </p>
-                  <p
-                      class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
-                      YEARS EXPERIENCE
-                  </p>
-              </div>
-              <div class="text-center w-fit h-fit my-4 md:my-0">
-                  <p
-                      class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
-                      100+
-                  </p>
-                  <p
-                      class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
-                      CLIENT
-                  </p>
-              </div>
-              <div class="text-center w-fit h-fit my-4 md:my-0">
-                  <p
-                      class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
-                      4,8
-                  </p>
-                  <p
-                      class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
-                      AVERAGE REVIEW
-                  </p>
-              </div>
-              <div class="text-center w-fit h-fit my-4 md:my-0">
-                  <p
-                      class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
-                      9/10
-                  </p>
-                  <p
-                      class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
-                      SUCCESSFUL
-                  </p>
-              </div>
-          </div>
-      </section>
+        <div
+            class="stats container w-[90%]  mx-auto bg-card-gradient flex flex-wrap justify-between items-center px-[20px] lg:px-[100px] md:px-[70px] rounded-[30px] h-auto md:h-[120px] lg:h-[140px] absolute transform -translate-x-1/2 translate-y-1/2 bottom-0 left-1/2">
+            <div class="text-center w-fit h-fit my-0">
+                <p
+                    class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
+                    13
+                </p>
+                <p
+                    class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
+                    YEARS EXPERIENCE
+                </p>
+            </div>
+            <div class="text-center w-fit h-fit my-4 md:my-0">
+                <p
+                    class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
+                    100+
+                </p>
+                <p
+                    class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
+                    CLIENT
+                </p>
+            </div>
+            <div class="text-center w-fit h-fit my-4 md:my-0">
+                <p
+                    class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
+                    4,8
+                </p>
+                <p
+                    class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
+                    AVERAGE REVIEW
+                </p>
+            </div>
+            <div class="text-center w-fit h-fit my-4 md:my-0">
+                <p
+                    class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
+                    9/10
+                </p>
+                <p
+                    class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
+                    SUCCESSFUL
+                </p>
+            </div>
+        </div>
+    </section>
 
       <section id="About"
           class="container mx-auto pt-[120px] md:pt-[190px] pb-[80px] md:pb-[100px] lg:pb-[160px] px-3 lg:px-0">
@@ -670,8 +649,6 @@
           </div>
         </div>
       </section>
-    
-
 
       <footer class="bg-footer-gradient text-white rounded-t-[25px] ">
         <div
@@ -732,4 +709,34 @@
 
   </div>
   </body>
+
+  <script src="main.js"></script>
+  <script>
+    // Toggle mobile menu
+    document.getElementById("menu-btn").addEventListener("click", function () {
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+  <script>
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const slider = document.querySelector('.slider');
+
+    const cardWidth = document.querySelector('.card-testi').offsetWidth + 30; // 30px adalah gap antar card
+
+    prevBtn.addEventListener('click', () => {
+        slider.scrollBy({
+            left: -cardWidth,
+            behavior: 'smooth'
+        });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        slider.scrollBy({
+            left: cardWidth,
+            behavior: 'smooth'
+        });
+    });
+</script>
 </html>

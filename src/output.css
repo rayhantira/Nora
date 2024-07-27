@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
 /*
 ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
@@ -1291,6 +1291,10 @@ video {
   line-height: 1.25rem;
 }
 
+.text-\[9px\]{
+  font-size: 9px;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -2123,6 +2127,10 @@ video {
 
   .lg\:leading-\[86px\]{
     line-height: 86px;
+  }
+
+  .lg\:leading-\[20px\]{
+    line-height: 20px;
   }
 
   .lg\:tracking-tightest{

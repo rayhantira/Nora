@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .pause-animate {
+    animation-play-state: paused;
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms ease-in-out;
+  }
+}
+.gradient-text {
+  background: linear-gradient(90deg, #b1cecc 25%, #dcca9c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+@font-face {
+  font-family: "Mornarque";
+  src: url("assets/ic/font/Monarque-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mornarque";
+  src: url("assets/lic/font/Monarque-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Mornarque";
+  src: url("/assets/font/Monarque-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.card-testi {
+  flex: none;
+  width: 100%; /* Menggunakan lebar penuh container */
+  max-width: 500px; /* Sesuaikan dengan lebar card yang diinginkan */
+}

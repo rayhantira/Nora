@@ -1,0 +1,734 @@
+<!doctype html>
+<html
+  lang="en"
+  class="scroll-smooth scrollbar-thumb-rounded-full scrollbar-thumb-slate-500 hover:scrollbar-thumb-primary scrollbar-thin scrollbar-track-[#212529]"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nora</title>
+    <link rel="icon" href="/assets/images/logos/logo.png" type="image/x-icon">
+
+    <link href="src/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script>
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const slider = document.querySelector('.slider');
+  
+      const cardWidth = document.querySelector('.card-testi').offsetWidth + 30; // 30px adalah gap antar card
+  
+      prevBtn.addEventListener('click', () => {
+          slider.scrollBy({
+              left: -cardWidth,
+              behavior: 'smooth'
+          });
+      });
+  
+      nextBtn.addEventListener('click', () => {
+          slider.scrollBy({
+              left: cardWidth,
+              behavior: 'smooth'
+          });
+      });
+  </script>
+  </head>
+  <body class="bg-[#FFFEF9] font-poppins">
+    <div class="content overflow-x-hidden scroll-smooth">
+
+      <section id="Header" class="flex flex-col gap-[50px] relative">
+          <nav class="container mx-auto flex justify-between items-center pt-[30px] z-30 px-1 md:px-0">
+              <a href="index.html" class="flex w-fit">
+                  <img src="/assets/images/logos/logo.svg" alt="logo"
+                      class="w-[80px] sm:w-[120px] md:w-[140px] lg:w-36 " />
+              </a>
+              <div class="hidden lg:flex items-center">
+                  <ul class="flex gap-[45px] items-center text-white">
+                      <li>
+                          <a href="index.html"
+                              class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">Home</a>
+                      </li>
+                      <li>
+                          <a href="#About"
+                              class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">About</a>
+                      </li>
+                      <li>
+                          <a href="#Services"
+                              class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">Services</a>
+                      </li>
+                      <li>
+                          <a href="#Testimonials"
+                              class="font-semibold text-base text-black hover:text-[#FAC422] transition-all duration-300">Testimonials</a>
+                      </li>
+                      <li>
+                          <a href="#"
+                              class="text-white bg-black font-semibold text-base p-[14px_30px] rounded-full transition-all duration-300  hover:text-black hover:bg-transparent border-black border">Let's
+                              Talk</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="lg:hidden flex items-center px-2">
+                  <button id="menu-btn" class="text-black z-50 relative">
+                      <!-- Hamburger Icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                  </button>
+              </div>
+
+              <!-- Mobile Menu -->
+              <div id="mobile-menu"
+                  class="hidden fixed flex flex-col gap-[50px] items-center text-black top-0 left-0 w-full h-full z-40 justify-center bg-[#faf7ec]">
+                  <ul class="flex flex-col gap-[35px] items-center text-black opacity-100">
+                      <li>
+                          <a href="{{ route('front.index"
+                              class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">Home</a>
+                      </li>
+                      <li>
+                          <a href="#About"
+                              class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">About</a>
+                      </li>
+                      <li>
+                          <a href="#Services"
+                              class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">Services</a>
+                      </li>
+                      <li>
+                          <a href="#Testimonials"
+                              class="font-semibold text-[18px] text-black hover:text-[#FAC422] transition-all duration-300">Testimonials</a>
+                      </li>
+                      <li>
+                          <a href="#"
+                              class="mt-5 text-white bg-black font-medium text-[18px] px-[30px] py-[12px] rounded-full transition-all duration-300 hover:bg-transparent hover:text-black border-black border">Let's
+                              Talk</a>
+                      </li>
+                  </ul>
+              </div>
+
+          </nav>
+
+          <div
+              class="hero container mx-auto flex flex-col md:flex-row justify-between items-center  md:pb-[60px] px-1 ">
+              <div class="flex flex-col gap-[18px] sm:gap-[20px] md:gap-[30px] h-fit container text-white z-20">
+                  <p
+                      class="text-center tracking-wide text-[10px] md:text-[12px] lg:text-left font-semibold  lg:text-[14px] text-black bg-yellow py-[3px] px-[18px] md:lg:py-1 md:px-5 rounded-full w-fit mx-auto md:mx-0">
+                      WE CAN HELP YOU
+                  </p>
+                  <h1
+                      class="text-center md:text-left font-semibold md:font-medium tracking-tight lg:tracking-tightest text-[50px] sm:text-[56px] md:text-[65px] lg:text-[80px] xl:text-[100px] leading-[60px] sm:leading-[70px] lg:leading-[86px] xl:leading-[100px] text-black">
+                      Weaving Your
+                      <span class="font-monarque font-semibold italic pr-3 gradient-text">Brand</span>
+                      Soul
+                  </h1>
+                  <p
+                      class="text-center md:text-left text-[12px] sm:text-[12px] md:text-[14px] lg:text-[16px] text-[#797978] font-normal mx-auto md:mx-0 md:w-[450px]">
+                      We
+                      seamlessly blend your brand's essence
+                      into every pixel, crafting digital experiences that resonate with your unique identity.</p>
+                  <div class="flex mx-auto md:mx-0 mb-12 md:mb-0">
+                      <button
+                          class="flex items-center justify-center font-semibold text-[12px] sm:text-[14px] md:text-[16px] rounded-full p-[12px_20px] lg:p-[12px_30px] bg-black w-fit transition-all duration-300 hover:bg-transparent border hover:border-black hover:bg-white hover:text-black group">
+                          GET STARTED
+                          <img src="/assets/images/icons/button arrow.png"
+                              class="w-[30px] lg:w-[40px] h-auto ml-2 transition-all duration-300 group-hover:hidden"
+                              alt="">
+                          <img src="/assets/images/icons/arrow-right-hover.png"
+                              class="w-[30px] lg:w-[40px] h-auto ml-2 transition-all duration-300 hidden group-hover:block"
+                              alt="">
+                      </button>
+                      <button
+                          class="font-semibold  text-black text-[12px] sm:text-[14px] md:text-[16px] rounded-full p-[12px_20px] md:p-[12px_30px]  w-fit transition-all duration-300 hover:bg-yellow ">
+                          LEARN MORE
+                      </button>
+                  </div>
+              </div>
+              <div class="lg:flex flex-col w-[300px] md:w-[520px] lg:w-[600px] z-20">
+                  <img src="/assets/images/hero-image.png" class="w-full h-full object-contain" alt="hero image" />
+              </div>
+              <img src="/assets/images/Ellipse.svg"
+                  class="absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 z-0"
+                  alt="background icon" />
+          </div>
+
+          <div class="company-logos w-full overflow-hidden pb-[100px] sm:pb-[120px] md:pb-[140px] lg:pb-[180px] z-19 ">
+              <div class="group/slider flex flex-nowrap w-max items-center">
+                  <div
+                      class="logo-container animate-[slide_25s_linear_infinite] group-hover/slider:pause-animate  flex  gap-[40px] md:gap-[70px] pl-[70px] items-center flex-nowrap">
+                      <div class="flex w-[100px] md:w-[140px]  h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                  </div>
+                  <div
+                      class="logo-container animate-[slide_25s_linear_infinite] group-hover/slider:pause-animate  flex gap-[70px] pl-[70px] items-center flex-nowrap ">
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum1.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum2.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum3.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                      <div class="flex w-[100px] md:w-[140px] h-[40px] shrink-0">
+                          <img src="/assets/images/logos/logoipsum4.png" class="w-full h-full object-contain"
+                              alt="logo">
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div
+              class="stats container w-[90%]  mx-auto bg-card-gradient flex flex-wrap justify-between items-center px-[20px] lg:px-[100px] md:px-[70px] rounded-[30px] h-auto md:h-[120px] lg:h-[140px] absolute transform -translate-x-1/2 translate-y-1/2 bottom-0 left-1/2">
+              <div class="text-center w-fit h-fit my-0">
+                  <p
+                      class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
+                      13
+                  </p>
+                  <p
+                      class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
+                      YEARS EXPERIENCE
+                  </p>
+              </div>
+              <div class="text-center w-fit h-fit my-4 md:my-0">
+                  <p
+                      class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
+                      100+
+                  </p>
+                  <p
+                      class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
+                      CLIENT
+                  </p>
+              </div>
+              <div class="text-center w-fit h-fit my-4 md:my-0">
+                  <p
+                      class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
+                      4,8
+                  </p>
+                  <p
+                      class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
+                      AVERAGE REVIEW
+                  </p>
+              </div>
+              <div class="text-center w-fit h-fit my-4 md:my-0">
+                  <p
+                      class="font-bold md:font-semibold text-[16px] sm:text-[20px] md:text-[25px] lg:text-[35px] xl:text-[40px]">
+                      9/10
+                  </p>
+                  <p
+                      class="font-light text-[#797978] text-[6px] sm:text-[10px] md:text-[12px] lg:text-[15px] xl:text-[18px]">
+                      SUCCESSFUL
+                  </p>
+              </div>
+          </div>
+      </section>
+
+      <section id="About"
+          class="container mx-auto pt-[120px] md:pt-[190px] pb-[80px] md:pb-[100px] lg:pb-[160px] px-3 lg:px-0">
+          <div class="flex flex-col gap-[30px] container  md:px-4">
+              <p
+                  class="text-center tracking-wide text-[10px] md:text-[12px] lg:text-left font-semibold  lg:text-[14px] text-black bg-yellow py-[3px] px-[18px] md:lg:py-1 md:px-5 rounded-full w-fit ">
+                  ABOUT
+              </p>
+              <div class="flex flex-col md:flex-row justify-between items-start  ">
+                  <div class="self-start md:w-[55%]">
+                      <div class="flex md:flex-col flex-row justify-between items-start pb-[20px] md:pb-0">
+                          <div>
+                              <h2
+                                  class="font-semibold w-fit md:w-full text-left text-[18px] sm:text-[22px] md:text-[27px] lg:text-[40px] xl:text-[55px] leading-[22px] lg:leading-[45px] xl:leading-[50px] md:leading-[28px] md:text-left pb-[12px] md:pb-[15px] lg:pb-[35px]">
+                                  Combining <span class="font-monarque font-bold italic gradient-text">technology</span>
+                                  prowess & <span class="font-monarque font-bold italic gradient-text">creative</span>
+                                  excellence
+                              </h2>
+                              <p
+                                  class="text-left w-[80%] sm:w-[60%] text-[8px] sm:text-[8px] md:text-[10px] lg:text-[14px] text-[#454545] font-light lg:leading-[25px] md:w-4/5 pb-12px md:pb-[15px] lg:pb-[30px]">
+                                  We infuse each project with creativity and precision, ensuring that every detail
+                                  reflects your brand's soul.
+                              </p>
+                          </div>
+                          <div class="w-[189px] md:w-full flex justify-end md:justify-start">
+                              <button
+                                  class="flex items-center justify-center font-semibold text-[10px] sm:text-[14px] md:text-[16px] hover:text-[#4d4d4d] bg-transparent w-fit transition-all duration-300 group">
+                                  LEARN MORE
+                                  <img src="/assets/images/icons/button-arrow-hover.png"
+                                      class="w-[20px] lg:w-[40px] h-auto ml-[2px] md:ml-2 transition-all duration-500 group-hover:hidden"
+                                      alt="">
+                                  <img src="/assets/images/icons/arrow-right-hover.png"
+                                      class="w-[20px] lg:w-[40px] h-auto ml-[2px] md:ml-2 transition-all duration-500 hidden group-hover:block"
+                                      alt="">
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="flex-shrink-0 w-fit md:w-[45%] mx-auto mr-auto">
+                      <img src="/assets/images/about-image.png"
+                          class="md:mr-auto mx-auto w-full md:w-full h-full object-contain" alt="image" />
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section id="Services" class="container   mx-auto pb-[0px] px-3 lg:px-0 lg:pb-[130px]">
+          <div class="flex flex-col">
+              <p
+                  class="mb-[20px] mx-auto text-center tracking-wide text-[10px] md:text-[12px] lg:text-left font-semibold lg:text-[14px] text-black bg-yellow py-[3px] px-[18px] md:lg:py-1 md:px-5 rounded-full w-fit ">
+                  SERVICES
+              </p>
+              <h2
+                  class="font-semibold w-fit text-center mx-auto text-[25px] md:text-[27px] lg:text-[40px] xl:text-[55px] leading-[20px] lg:leading-[45px] md:leading-[28px] pb-[10px] lg:pb-0">
+                  Excellence in every
+              </h2>
+              <h2
+                  class=" font-monarque font-bold italic gradient-text w-fit text-center mx-auto text-[22px] md:text-[27px] lg:text-[40px] xl:text-[55px] leading-[20px] lg:leading-[45px] md:leading-[28px] pb-[35px] md:pb-[15px] lg:pb-[35px] xl:pb-[80px]">
+                  services</h2>
+              <div class="flex flex-wrap justify-center gap-4 lg:gap-[60px] w-full mx-auto">
+                  <div class="w-[150px] md:w-[250px] lg:w-fit flex flex-col items-center text-center p-1 md:p-4 ">
+                      <div class="flex-none">
+                          <img src="/assets/images/icons/services-web.png" alt="icon"
+                              class="w-[60px] lg:w-[100px]" />
+                      </div>
+                      <div class="flex flex-col mt-2">
+                          <p
+                              class="font-medium text-[16px] lg:text-[25px] leading-[15px] lg:leading-[23px] w-full text-left">
+                              Web
+                          </p>
+                          <p
+                              class="font-medium text-[16px] lg:text-[25px] leading-[15px] lg:leading-[23px] w-full text-left">
+                              Development
+                          </p>
+                      </div>
+                  </div>
+                  <div class="w-[150px] md:w-[250px] lg:w-fit flex flex-col items-center text-center p-1 md:p-4 ">
+                      <div class="flex-none">
+                          <img src="/assets/images/icons/services-uiux.png" alt="icon"
+                              class="w-[60px] lg:w-[100px]" />
+                      </div>
+                      <div class="flex flex-col mt-2">
+                          <p
+                              class="font-medium text-[16px] lg:text-[25px] leading-[15px] lg:leading-[23px] w-full text-left">
+                              UI/UX
+                          </p>
+                          <p
+                              class="font-medium text-[16px] lg:text-[25px] leading-[15px] lg:leading-[23px] w-full text-left">
+                              Design
+                          </p>
+                      </div>
+                  </div>
+                  <div class="w-[150px] md:w-[250px] lg:w-fit flex flex-col items-center text-center p-1 md:p-4 ">
+                      <div class="flex-none">
+                          <img src="/assets/images/icons/services-marketing.png" alt="icon"
+                              class="w-[60px] lg:w-[100px]" />
+                      </div>
+                      <div class="flex flex-col mt-2">
+                          <p
+                              class="font-medium text-[16px] lg:text-[25px] leading-[15px] lg:leading-[23px] w-full text-left">
+                              Digital
+                          </p>
+                          <p
+                              class="font-medium text-[16px] lg:text-[25px] leading-[15px] lg:leading-[23px] w-full text-left">
+                              Marketing
+                          </p>
+                      </div>
+                  </div>
+                  <div class="w-[150px] md:w-[250px] lg:w-fit flex flex-col items-center text-center p-1 md:p-4">
+                      <div class="flex-none">
+                          <img src="/assets/images/icons/services-branding.png" alt="icon"
+                              class="w-[60px] lg:w-[100px]" />
+                      </div>
+                      <div class="flex flex-col mt-2">
+                          <p
+                              class="font-medium text-[16px] lg:text-[25px] leading-[15px] lg:leading-[23px] w-full text-left">
+                              Branding &
+                          </p>
+                          <p
+                              class="font-medium text-[16px] lg:text-[25px] leading-[15px] lg:leading-[23px] w-full text-left">
+                              Identity
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section id="Book" class="container  mx-auto pt-[80px] md:pt-[20px] lg:pt-0 px-3 lg:px-0 pb-0">
+        <div
+            class="col-span-1 md:col-span-2 p-[20px] md:p-[50px] pb-0 rounded-[30px] flex flex-col md:flex-row gap-[20px] md:gap-[50px] bg-card-gradient">
+            <div class="flex-1 flex flex-col gap-[20px] md:gap-[50px]">
+                <div class="flex flex-col gap-5">
+                    <p
+                        class="font-semibold md:font-medium text-[28px] md:text-[30px] lg:text-[45px] xl:text-[60px] leading-[30px] lg:leading-[50px] xl:leading-[70px] md:leading-[40px]">
+                        Kickstart your project with us
+                    </p>
+                    <p
+                        class="text-[10px] font-light text-[#595959] md:text-[11px] lg:text-[12px] xl:text-[14px] leading-[14px] lg:leading-[25px] xl:w-[80%]">
+                        Our team of dedicated professionals is ready to turn your ideas into actionable plans. From
+                        initial brainstorming to final execution, we'll work closely with you every step of the way to
+                        ensure your project's success. Let's bring your vision to life together.
+                    </p>
+                    <button
+                        class="flex items-center justify-center font-semibold text-white text-[10px] sm:text-[14px] md:text-[12px] lg:text-[16px] rounded-full p-[10px_15px] lg:p-[12px_30px] bg-black w-fit transition-all duration-300 hover:bg-transparent border hover:border-black hover:text-black group md:mt-0">
+                        GET STARTED
+                        <img src="/assets/images/icons/button arrow.png"
+                            class="w-[20px] lg:w-[40px] h-auto ml-2 transition-all duration-300 group-hover:hidden"
+                            alt="">
+                        <img src="/assets/images/icons/arrow-right-hover.png"
+                            class="w-[20px] lg:w-[40px] h-auto ml-2 transition-all duration-300 hidden group-hover:block"
+                            alt="">
+                    </button>
+                </div>
+            </div>
+            <div
+                class="flex items-center justify-center md:w-[300px] lg:w-[400px] xl:w-[500px] w-full pb-[20px] md:pb-0">
+                <img src="/assets/images/book.png" alt="" class="max-w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+      <section id="Testimonials" class="container max-w-full mx-auto pt-[80px] md:pt-[100px] lg:pt-[140px] px-3 lg:px-0">
+          <div class="flex flex-col md:pl-4">
+              <p
+                  class="mb-[20px] mx-auto text-center tracking-wide text-[10px] md:text-[12px] lg:text-left font-semibold  lg:text-[14px] text-black bg-yellow py-[3px] px-[18px] md:lg:py-1 md:px-5 rounded-full w-fit">
+                  TESTIMONIALS
+              </p>
+              <h2
+                  class="font-semibold w-fit text-center mx-auto text-[25px] md:text-[27px] lg:text-[40px] xl:text-[55px] leading-[20px] lg:leading-[45px] md:leading-[28px] xl:pb-[10px]">
+                  Voices of our
+              </h2>
+              <h2
+                  class=" font-monarque font-bold italic gradient-text w-fit text-center mx-auto text-[25px] md:text-[27px] lg:text-[40px] xl:text-[55px] leading-[20px] lg:leading-[45px] md:leading-[28px] pb-[12px] md:pb-[15px] lg:pb-[35px]">
+                  satisfied clients</h2>
+
+              <div class="relative mt-[30px] pb-[0px] md:pb-[100px] lg:pb-0 px-2 md:px-0">
+
+                  <!-- Slider Container -->
+                  <div class="slider space-x-[30px]">
+                      <!-- Card 1 -->
+                      <div
+                          class="card-testi bg-transparent transition-all duration-300 hover:bg-card-gradient border rounded-[30px] flex flex-col p-5 gap-5 h-fit">
+                          <p
+                              class="font-medium text-[15px] md:text-[18px] lg:text-[20px] leading-[20px] xl:leading-[30px] md:leading-[27px] w-[full] text-left">
+                              Nora working methods were truly different from other freelancers, Nora has this kind of
+                              mindset that can create user-centered products and users loved it
+                          </p>
+                          <div class="flex items-center gap-2 lg:gap-4">
+                              <div class="w-[50px] lg:w-[70px]  shrink-0">
+                                  <img src="/assets/images/photo/photo.png" alt="photo" />
+                              </div>
+                              <div class="flex flex-col">
+                                  <p class="font-semibold text-base lg:text-xl lg:leading-[30px]">Jessi Lyio</p>
+                                  <p class="font-light text-sm  lg:text-base lg:leading-[30px]">
+                                      CPO Agolia Modd</p>
+                              </div>
+
+                          </div>
+                      </div>
+
+
+                      <!-- Card 2 -->
+                      <div
+                          class="card-testi bg-transparent transition-all duration-300 hover:bg-card-gradient border rounded-[30px] flex flex-col p-5 gap-5 h-fit md:">
+                          <p
+                              class="font-medium text-[15px] md:text-[18px] lg:text-[20px] leading-[20px] xl:leading-[30px] md:leading-[27px] w-[full] text-left">
+                              Nora helped us to build our first prototype to win our investor and early users heart that
+                              generate huge attraction. Will hire Nira back again anytime soon!
+                          </p>
+                          <div class="flex items-center gap-2 lg:gap-4">
+                              <div class="w-[50px] lg:w-[70px] shrink-0">
+                                  <img src="/assets/images/photo/photo2.png" alt="photo" />
+                              </div>
+                              <div class="flex flex-col gap-[2px]">
+                                  <p class="font-semibold text-base lg:text-xl lg:leading-[30px]">Mariam Sya</p>
+                                  <p class="font-light text-sm  lg:text-base lg:leading-[30px]">Founder TinderJobs</p>
+                              </div>
+
+                          </div>
+                      </div>
+
+                      <!-- Card 3 -->
+                      <div
+                          class="card-testi bg-transparent transition-all duration-300 hover:bg-card-gradient border rounded-[30px] flex flex-col p-5 gap-5 h-fit md:">
+                          <p
+                              class="font-medium text-[15px] md:text-[18px] lg:text-[20px] leading-[20px] xl:leading-[30px] md:leading-[27px] w-[full] text-left">
+                              Nora working methods were truly different from other freelancers, Nora has this kind of
+                              mindset that can create user-centered products and users loved it!
+                          </p>
+                          <div class="flex items-center gap-2 lg:gap-4">
+                              <div class="w-[50px] lg:w-[70px] shrink-0">
+                                  <img src="/assets/images/photo/photo3.png" alt="photo" />
+                              </div>
+                              <div class="flex flex-col gap-[2px]">
+                                  <p class="font-semibold text-base lg:text-xl lg:leading-[30px]">Jessi Lyio</p>
+                                  <p class="font-light text-sm  lg:text-base lg:leading-[30px]">CPO Agolia Modd</p>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Card 4 -->
+                      <div
+                          class="card-testi bg-transparent transition-all duration-300 hover:bg-card-gradient border rounded-[30px] flex flex-col p-5 gap-5 h-fit md:">
+                          <p
+                              class="font-medium text-[15px] md:text-[18px] lg:text-[20px] leading-[20px] xl:leading-[30px] md:leading-[27px] w-[full] text-left">
+                              Nora helped us to build our first prototype to win our investor and early users heart that
+                              generate huge attraction. Will hire her back again anytime soon”
+                          </p>
+                          <div class="flex items-center gap-2 lg:gap-4 container">
+                              <div class="w-[50px] lg:w-[70px] shrink-0">
+                                  <img src="/assets/images/photo/photo4.png" alt="photo" />
+                              </div>
+                              <div class="flex flex-col gap-[2px]">
+                                  <p class="font-semibold text-base lg:text-xl lg:leading-[30px]">Mariam Sya</p>
+                                  <p class="font-light text-sm  lg:text-base lg:leading-[30px]">Founder TinderJobs</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div
+                      class="flex items-center space-x-4 w-fit gap-[10px] lg:gap-[30px] ml-auto cursor-pointer pt-[35px] md:pt-[50px]">
+                      <button id="prev-btn" class="group">
+                          <img id="prev-btn" src="/assets/images/icons/arrow-left.png"
+                              class="w-[35px] lg:w-[55px] transition-all duration-500 group-hover:hidden"
+                              alt="">
+                          <img id="prev-btn" src="/assets/images/icons/arrow-left-hover.png"
+                              class="w-[35px] lg:w-[55px] transition-all duration-500 hidden group-hover:block"
+                              alt="">
+                      </button>
+                      <button id="next-btn" class="group md:pr-10">
+                          <img id="next-btn" src="/assets/images/icons/arrow-right.png"
+                              class="w-[35px] lg:w-[55px] transition-all duration-500 group-hover:hidden"
+                              alt="">
+                          <img id="next-btn" src="/assets/images/icons/arrow-right-hover.png"
+                              class="w-[35px] lg:w-[55px] transition-all duration-500 hidden group-hover:block"
+                              alt="">
+                      </button>
+                  </div>
+
+              </div>
+      </section>
+
+      <section id="FAQ" class="container mx-auto px-4 md:px-2">
+        <div
+          class="flex flex-col md:flex-row gap-[30px] md:gap-[70px] items-center pt-[100px] pb-24 md:pb-[150px]"
+        >
+          <div class="flex flex-col gap-[10px] w-full md:w-auto">
+            <div
+              class="w-[60px] h-[60px] flex shrink-0 rounded-full bg-yellow items-center justify-center mx-auto md:mx-0"
+            >
+              <img src="/assets/images/icons/messages.svg" class="w-[30px]" alt="icon" />
+            </div>
+            <div class="flex flex-col gap-[10px] text-center md:text-left">
+              <h2
+                class="font-semibold text-[25px] md:text-[27px] lg:text-[40px] xl:text-[55px] leading-[20px] lg:leading-[55px] md:leading-[28px]"
+              >
+                Frequently Asked
+                <span class="font-bold font-monarque italic gradient-text text-[25px] md:text-[27px] lg:text-[40px] xl:text-[55px] md:leading-[28px] pr-1">Questions</span>
+              </h2>
+              <p class="text-[12px] md:text-[14px] lg:text-[16px] text-[#878C9C]">
+                If you have any question please contact us.
+              </p>
+            </div>
+            <button
+            class="flex mx-auto md:mx-0 items-center justify-center font-semibold text-[12px] sm:text-[14px] md:text-[12px] lg:text-[14px] rounded-full p-[6px_12px] md:p-[8px_20px] bg-black text-white w-fit transition-all duration-300 hover:bg-transparent border hover:border-black hover:bg-white hover:text-black group">
+            CONTACT US
+            <img src="/assets/images/icons/button arrow.png"
+                class="w-[30px] lg:w-[40px] h-auto ml-2 transition-all duration-300 group-hover:hidden"
+                alt="">
+            <img src="/assets/images/icons/arrow-right-hover.png"
+                class="w-[30px] lg:w-[40px] h-auto ml-2 transition-all duration-300 hidden group-hover:block"
+                alt="">
+        </button>
+          </div>
+          <div class="flex flex-col gap-[30px] w-full md:w-[503px] lg:w-[603px] shrink-0">
+            <div class="flex flex-col p-5 rounded-2xl border-2 w-full hover:bg-card-gradient">
+              <button
+                class="accordion-button flex justify-between gap-1 items-center text-left"
+                data-accordion="accordion-faq-1"
+              >
+                <span class="font-semibold text-[16px] md:text-[18px] lg:text-[20px]"
+                  >How do we work usually?</span
+                >
+                <div class="arrow w-9 h-9 flex shrink-0">
+                  <img
+                    src="/assets/images/icons/arrow-circle-down.svg"
+                    class="transition-all duration-300"
+                    alt="icon"
+                  />
+                </div>
+              </button>
+              <div id="accordion-faq-1" class="accordion-content hide ">
+                <p
+                  class="text-[12px] md:text-[14px] lg:text-[16px] leading-[20px] md:leading-[30px] pt-5"
+                >
+                  Our work process is characterized by
+                  flexibility, self-discipline, and a strong emphasis on client
+                  communication.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col p-5 rounded-2xl border-2 w-full hover:bg-card-gradient">
+              <button
+                class="accordion-button flex justify-between gap-1 items-center text-left"
+                data-accordion="accordion-faq-2"
+              >
+                <span class="font-semibold text-[16px] md:text-[18px] lg:text-[20px]"
+                  >How much we charge per project?</span
+                >
+                <div class="arrow w-9 h-9 flex shrink-0">
+                  <img
+                    src="/assets/images/icons/arrow-circle-down.svg"
+                    class="transition-all duration-300"
+                    alt="icon"
+                  />
+                </div>
+              </button>
+              <div id="accordion-faq-2" class="accordion-content hide">
+                <p
+                  class="text-[12px] md:text-[14px] lg:text-[16px] leading-[20px] md:leading-[30px] pt-5"
+                >
+                  We charge based on the project brief and
+                  given timeline to finish that particular project.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col p-5 rounded-2xl border-2 w-full hover:bg-card-gradient">
+              <button
+                class="accordion-button flex justify-between gap-1 text-left"
+                data-accordion="accordion-faq-3"
+              >
+                <span class="text-left font-semibold text-[16px] md:text-[18px] lg:text-[20px]"
+                  >Can your company handle full-time projects?</span
+                >
+                <div class="arrow w-9 h-9 flex shrink-0">
+                  <img
+                    src="/assets/images/icons/arrow-circle-down.svg"
+                    class="transition-all duration-300"
+                    alt="icon"
+                  />
+                </div>
+              </button>
+              <div id="accordion-faq-3" class="accordion-content hide">
+                <p
+                  class="text-[12px] md:text-[14px] lg:text-[16px] leading-[20px] md:leading-[30px] pt-5"
+                >
+                Yes, we handle full-time projects with dedicated resources and consistent communication to ensure quality results.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+
+
+      <footer class="bg-footer-gradient text-white rounded-t-[25px] ">
+        <div
+            class="container mx-auto flex flex-col md:flex-row justify-between pt-[30px] md:pt-12 pb-[20px] md:pb-0 md:mb-[50px]  relative px-4 md:px-0">
+            <div class="flex shrink-0 h-fit z-10 mb-auto md:mb-0">
+                <img src="/assets/images/logos/logo.svg"
+                    class="w-[100px] md:w-[80px] lg:w-[140px] xl:w-[200px] pb-[20px] md:md-auto md:ml-6" alt="logo" />
+            </div>
+            <div
+                class="grid grid-cols-2 md:grid-cols-none md:flex md:flex-row gap-[20px] md:gap-[100px] z-10 mr-6 text-black ">
+                <div class="flex flex-col gap-3 md:gap-5">
+                    <p class="font-bold text-[12px] md:text-[14px] lg:text-[18px]">Services</p>
+                    <a href=""
+                        class="font-medium hover:font-semibold hover:text-yellow transition-all duration-300 text-[10px] md:text-[12px] lg:text-[14px]">Web
+                        Development</a>
+                    <a href=""
+                        class="font-medium hover:font-semibold hover:text-yellow transition-all duration-300 text-[10px] md:text-[12px] lg:text-[14px]">UI/UX
+                        Design</a>
+                    <a href=""
+                        class="font-medium hover:font-semibold hover:text-yellow transition-all duration-300 text-[10px] md:text-[12px] lg:text-[14px]">Digital
+                        Marketing</a>
+                    <a href=""
+                        class="font-medium hover:font-semibold hover:text-yellow transition-all duration-300 text-[10px] md:text-[12px] lg:text-[14px]">Branding
+                        & Identity</a>
+                </div>
+                <div class="flex flex-col gap-3 md:gap-5">
+                    <p class="font-bold text-[12px] md:text-[14px] lg:text-[18px]">About</p>
+                    <a href=""
+                        class="font-medium hover:font-semibold hover:text-yellow transition-all duration-300 text-[10px] md:text-[12px] lg:text-[14px]">Profile</a>
+                    <a href=""
+                        class="font-medium hover:font-semibold hover:text-yellow transition-all duration-300 text-[10px] md:text-[12px] lg:text-[14px]">How
+                        do we work</a>
+                    <a href=""
+                        class="font-medium hover:font-semibold hover:text-yellow transition-all duration-300 text-[10px] md:text-[12px] lg:text-[14px]">Achievements</a>
+                    <a href=""
+                        class="font-medium hover:font-semibold hover:text-yellow transition-all duration-300 text-[10px] md:text-[12px] lg:text-[14px]">Team
+                        A</a>
+                </div>
+                <div class="flex flex-col gap-3 md:gap-5">
+                    <p class="font-bold text-[12px] md:text-[14px] lg:text-[18px]">Connect</p>
+                    <a href=""
+                        class="font-medium hover:font-semibold hover:text-yellow text-[10px] md:text-[12px] lg:text-[14px] transition-all duration-300 flex items-center gap-[6px]"><img
+                            src="/assets/images/icons/call.svg" alt="icon" />+1 2801
+                        2002</a>
+                    <a href=""
+                        class="font-medium hover:font-semibold hover:text-yellow text-[10px] md:text-[12px] lg:text-[14px] transition-all duration-300 flex items-center gap-[6px]"><img
+                            src="/assets/images/icons/dribbble.svg" alt="icon" />Nora Studio</a>
+                    <a href=""
+                        class="font-medium hover:font-semibold hover:text-yellow text-[10px] md:text-[12px] lg:text-[14px] transition-all duration-300 flex items-center gap-[6px]"><img
+                            src="/assets/images/icons/sms.svg" alt="icon" />norastudio@nora.com</a>
+                </div>
+            </div>
+        </div>
+        <p class="text-[10px] xl:text-[15px] lg:text-[13px] text-[#A0A0AC] text-center py-[20px]">
+            All Rights Reserved. Made by RayhanTira.
+        </p>
+    </footer>
+
+  </div>
+  </body>
+</html>
